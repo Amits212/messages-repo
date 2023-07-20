@@ -32,4 +32,4 @@ class UnreadMessageListView(generics.ListAPIView):
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        return Message.objects.filter(receiver=self.request.user, is_read=False)
+        return Message.objects.filter(receiver=self.request.user, message_already_read=False)
